@@ -10,7 +10,7 @@
 {
 	$verboseOutput = $PSCmdlet.MyInvocation.BoundParameters["Verbose"].IsPresent
 
-	$parameters = New-MigrationParameters $null $null
+	$parameters = New-MigrationParameters $ProjectName $ConnectionName
 	if (!$parameters)
 	{
 		return $false

@@ -3,7 +3,7 @@
 	<metadata>
 		<id>FluentMigrator.Cmdlets</id>
 		<description>Provides Visual Studio package mangement console cmdlets to work with FluentMigrator's migrations.</description>
-		<version>1.0.0</version>
+		<version>1.0.1</version>
 		<authors>Vladimir Smirnov</authors>
 		<owners>Vladimir Smirnov</owners>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
