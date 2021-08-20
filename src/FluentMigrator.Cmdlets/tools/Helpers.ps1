@@ -18,6 +18,7 @@
 
 	$migrationAssemblyPath = $parameters.MigrationsAssemblyPath
 	$connectionString = $parameters.ConnectionString
+	$providerName = $parameters.ProviderName
 
 	$migratorPath = Init-Migrator $Provider
 	
@@ -28,7 +29,14 @@
 	{
 		if (!$Provider)
 		{
-			$Provider = "SqlServer2014"
+			if ($providerName)
+			{
+				$Provider = $providerName
+			}
+			else
+			{
+				$Provider = "SqlServer2014"
+			}
 		}
 		$parameters = "-db " + $Provider + " -a """ + $migrationAssemblyPath + """ -c """ + $connectionString + """"
 
@@ -121,6 +129,7 @@ function New-MigrationParameters([String]$ProjectName, [String]$ConnectionName)
 	return @{
 		MigrationsAssemblyPath = $migrationsAssemblyPath
 		ConnectionString = $connectionString.ConnectionString
+		ProviderName = $connectionString.ProviderName
 	}
 }
 
